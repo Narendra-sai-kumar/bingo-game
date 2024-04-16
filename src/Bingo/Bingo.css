@@ -1,0 +1,80 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-image: linear-gradient(180deg,  pink, violet) ;
+    background-attachment: fixed; 
+}
+.bingo {
+    width:80%;
+    margin:auto;
+    position: relative;
+    padding: 10px;
+   
+}
+
+.bingo-header{
+    text-align: center;
+    color:white;
+    text-shadow: 2px 2px 4px black;
+    padding: 5px;
+    background-image: radial-gradient(#b8b848, #5b3fda);
+    border-radius: 70px;
+}
+
+.bingo-body{
+    text-align: center;
+    margin:auto;
+    display: flex; 
+    justify-content: center;
+    flex-direction:column;
+    
+}
+
+
+.bingo-container{
+    display:grid;
+    grid-template-columns: repeat(var(--rows, 5), 60px);
+    grid-template-rows:repeat(var(--rows, 5), 60px);
+    text-align: center;
+    margin:auto;
+   
+}
+
+.box{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border:2px solid black;
+    font-size:30px;
+    font-weight: bold;
+    z-index:3;
+    border-radius: 10px;
+    padding: 30px;
+    
+    background-color: white;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5),
+                -4px -4px 6px rgba(0, 0, 0, 0.5);
+    
+}
+
+.box.active::after, .box.active::before{
+    position:absolute;
+    content:"";
+    width: 15px;
+    height: 55px;
+    background-color: red;
+    z-index:-1;
+}
+
+.box.active::after{
+    transform:rotate(45deg);
+}
+.box.active::before{
+    transform:rotate(-45deg);
+}
+
+.box:hover{
+    background-color: white;
+}
